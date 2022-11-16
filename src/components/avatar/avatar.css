@@ -1,9 +1,9 @@
 .avatarPage{
   display: flex;
   flex-direction: row;
-  width: fit-content;
+  width: 100vw;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: center;
   right: 0;
   top:0;
   background-color: white;
@@ -24,25 +24,26 @@
   height: 30px;
   top: 20px;
   left: calc(50% - 50px);
-  
 }
 .avatarComponentWrap {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   gap: 1vh;
   /* position:absolute; */
   height: 100vh;
-  /* border: 1px solid black; */
-  width: fit-content;
+  /* border: 1px solid rgb(255, 0, 0); */
+  width:fit-content;
   margin-bottom: 5px;
-  /* background-color: rgb(255, 255, 255); */
- 
+  flex-wrap: nowrap;
+  /* background-color: pink; */
+  flex-direction: row;
 }
 .avatarTopHalf {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 1vh;
 }
 .avatarContainer {
@@ -50,7 +51,7 @@
   justify-content: center;
   align-items: center;
   border: 1px solid rgb(221, 221, 221);
-  width: 60vh;
+  width: 30vw;
   height: 60vh;
   flex-direction: column;
   /* border-radius: 10px; */
@@ -59,6 +60,7 @@
     rgb(248, 246, 246),
     rgb(245, 245, 247)
   );
+  position: relative;
 }
 
 .topHalf {
@@ -112,8 +114,8 @@
 .jeansSelectCards {
   display: flex;
   border: 1px solid rgb(221, 221, 221);
-  height: 30vh;
-  width: 60vh;
+  height: 60vh;
+  width: 15vw;
   background-image: linear-gradient(
     to bottom,
     rgb(248, 246, 246),
@@ -123,20 +125,22 @@
   justify-content: center;
   align-items: center;
   z-index: 5;
+  position: relative;
 }
 
 .userStats {
   display: flex;
-  border: 5px solid rgb(221, 221, 221);
-  border-radius: 10px;
-  height: 15vh;
-  width: 52vh;
+  border: 1px solid rgb(221, 221, 221);
+  height: 18vh;
+  width: 45vw;
   background-color: rgb(255, 255, 255);
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   z-index: 5;
   overflow: hidden;
+  position:absolute;
+  bottom: 10px;
 }
 
 .stats {
@@ -155,10 +159,14 @@
   width: 10vh;
   height: fit-content;
   padding: 10px;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   border: none;
   background-color: #53fdfd;
   transition: background-color 0.2s;
+  margin: 15px;
+}
+#genderButton:hover, .avatarArticle:hover{
+  cursor: pointer;
 }
 
 .femaleButton {
@@ -167,14 +175,14 @@
 
 .clothesSelectionTable{
   display: flex;
-  width: 60vh;
-  height: calc(91vh + 2px);
+  width: 30vw;
+  height: calc(79vh + 2px);
   background-image: linear-gradient(
     to bottom,
     rgb(248, 246, 246),
     rgb(245, 245, 247)
     );
-    margin-bottom: 5px;
+margin-bottom: 10px;
 border: 1px solid rgb(221, 221, 221);
 justify-content: center;
 align-items: center;
@@ -222,13 +230,14 @@ overflow: scroll;
 
 .pantsTable{
   display: flex;
-  width: 55vh;
-  height: 30vh;
+  width: 30vw;
+  height: 63vh;
   /* border: 1px solid blue; */
   gap: 10px;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
   overflow: scroll;
 }
 
@@ -241,6 +250,7 @@ overflow: scroll;
   width: 20vh;
   height: 20vh;
   color: white;
+  text-align: center;
 }
 
 .errorContainer{
@@ -255,5 +265,10 @@ overflow: scroll;
   width: 20vh;
   color: red;
   margin-left: 10px;
+  z-index: 5;
   /* border: 1px solid blue; */
+}
+
+.classActive {
+	border: 2px solid blue;
 }

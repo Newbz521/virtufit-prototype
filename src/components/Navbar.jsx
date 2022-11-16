@@ -5,15 +5,15 @@ export default function Navbar() {
 
   return (
     <navbar>
-      <ul className='links'>
+      {/* <ul className='links'>
         <li>SHOP</li>
         <li>DISCOVER</li>
         <li>SECONDHAND</li>
-      </ul>
+      </ul> */}
       <div>
         <img className='logo' src={logo} alt='Logo' />
       </div>
-      <div className='right-nav'>
+      {/* <div className='right-nav'>
         <div className='search-bar'>
           <input type='search' placeholder='🔎 What are you looking for?' />
         </div>
@@ -22,7 +22,7 @@ export default function Navbar() {
           <span class='material-symbols-outlined'>favorite</span>
           <span class='material-symbols-outlined'>lock</span>
         </div>
-      </div>
+      </div> */}
     </navbar>
   )
 }

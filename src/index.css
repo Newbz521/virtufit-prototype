@@ -58,7 +58,8 @@ body {
 navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .logo {
@@ -97,12 +98,125 @@ navbar {
 display: flex;
 background-color: black;
 position: absolute;
+flex-direction: row;
 right: 1%;
-width: 40px;
+width: 100px;
 height: 28px;
 top: 20px;
 color: white;
 justify-content: center;
 align-items: center;
 z-index: 5;
+}
+/*home*/
+.home {
+  display: flex;
+  width: fit-content;
+  height: 75vh;
+  width: 100%;
+  font-size: 100px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  background-image: url("https://images.hellogiggles.com/uploads/2016/03/29085607/gallery-1459248316-general-pants-denim.jpg");
+  background-size: cover;
+  background-position: top;
+  opacity: 0.65;
+}
+.container {
+  display: inline-block;
+}
+
+.typed-out {
+  overflow: hidden;
+  border-right: 0.1em solid coral;
+  white-space: nowrap;
+  height: fit-content;
+
+  animation: typing 3s steps(20, end) infinite,
+    blink-caret 0.7s step-end infinite;
+  /* animation-delay: -5s; */
+  font-size: 15rem;
+  width: 0;
+  color: rgb(255, 255, 255);
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.titleWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  color: rgb(245, 190, 38);
+  opacity: 1;
+}
+
+.homeCover {
+  display: flex;
+  width: 100%;
+  height: 90%;
+  /* filter: sepia(0.5) grayscale(1); */
+  position: absolute;
+  opacity: 0.8;
+  z-index: -1;
+}
+@keyframes createBox {
+  from {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+}
+@keyframes slide-up {
+  from {
+    margin-top: 100%;
+  }
+  to {
+    margin-top: 0%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(247, 5, 5);
+  }
+}
+/*Home*/
+
+@media only screen and (max-width: 600px) {
+  .typed-out {
+    font-size: 5rem;
+  }
+  .home{
+font-size: 5rem;
+  }
 }

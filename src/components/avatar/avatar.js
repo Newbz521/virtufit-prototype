@@ -1,6 +1,7 @@
 import './avatar.css'
 import React from 'react'
 import { useState, useEffect } from 'react'
+import dummy from "../../assets/dummyData.json"
 
 function Avatar(props) {
   const [slideIn, setSlideIn] = useState({ transform: "translate(0vh, 0%)" });
@@ -107,43 +108,17 @@ function Avatar(props) {
       console.log("A little tight on the thighs")
       setThighError("A little tight on the thighs")
     }
-
+    let currentClass = document.getElementById(`${e.target.id}`)
+    let buttons = document.querySelectorAll(".avatarArticle")
+    console.log(buttons)
+    buttons.forEach((button) => {
+      button.classList.remove('classActive')
+    })
+    if (currentClass) {
+      currentClass.classList.add("classActive")
+    }
   }
-  const dummyData = [
-    {
-      "uID": 1,
-      "Clothes": "Boot-Cut Jeans",
-      "Inseam Length": 34,
-      "Leg Opening": 15,
-      "Rise": 10.5,
-      "Seat": 42.5,
-      "Size": 34,
-      "Thigh": 24,
-      "Waist": 35.5
-    },
-    {
-      "uID": 2,
-      "Clothes": "Slim Fit Mid-Rise Jeans",
-      "Inseam Length": 31,
-      "Leg Opening": 15,
-      "Rise": 11,
-      "Seat": 42.5,
-      "Size": 34,
-      "Thigh": 24,
-      "Waist": 35.5
-    },
-    {
-      "uID": 3,
-      "Clothes": "Blue Regular Jeans",
-      "Inseam Length": 32,
-      "Leg Opening": 14,
-      "Rise": 10,
-      "Seat": 38.5,
-      "Size": 30,
-      "Thigh": 21.75,
-      "Waist": 31.5
-    },
-  ]
+
   return (
   
     <div className="avatarPage" style={props.slideIn}>
@@ -152,9 +127,9 @@ function Avatar(props) {
       <div className='avatarTopHalf'>
           <div className='avatarContainer'>
             <div className='errorContainer'>
-            <div className='error'>{waistError}</div>
+              <div className='error'>{waistError}</div>
               <div>{thighError}</div>
-              </div>
+            </div>
               <div className='topHalf'>
                 <div id='topTorso' className='upperTorso' style={torsoHeight}></div>
               </div>
@@ -172,34 +147,33 @@ function Avatar(props) {
                 </div>
                 </div>
               </div>
-            
           </div>
-          
-        <div className='jeansSelectCards'>
-          <button id='genderButton' onClick={handleGender}>
-            Male
-          </button>
-          Height:
-          <input type='range' min='60' max='76' onChange={handleHeight}></input>
-          {loggedHeight}
-          <br />
-          <br />
-          Waist:
-          <input type='range' min='25' max='42' onChange={handleWidth}></input>
-          {loggedWidth}"
-        </div>
-      </div>
-      </div>
-      {/* <div className='userStats'>
+          <div className='jeansSelectCards'>
+              <button id='genderButton' onClick={handleGender}>
+                Male
+              </button>
+              Height:
+              <input type='range' min='60' max='76' onChange={handleHeight}></input>
+              {loggedHeight}
+              <br />
+              <br />
+              Waist:
+              <input type='range' min='25' max='42' onChange={handleWidth}></input>
+              {loggedWidth}"
+          </div>
+          <div className='userStats'>
         <div className='stats odd'>Height: {user.height} "</div>
         <div className='stats even'>Torso Height: {user.torso_length}"</div>
         <div className='stats odd'>Leg Length: {user.legLength}"</div>
         <div className='stats even'>Waist: {user.waist}" </div>
-      </div> */}
+      </div>
+        </div>
+        
+      </div>
         <div className='clothesSelectionTable'>
         <div className='pantsTable'>
-          {dummyData.map((data) => 
-            <div onClick={compareSize } className='avatarArticle' data-thigh={data.Thigh} data-size={data.Size} data-waist={data.Waist} data-seat={data.seat} >{data.Clothes}</div>
+          {dummy.map((data) => 
+            <div id={data.uID} onClick={compareSize} className='avatarArticle' data-thigh={data.Thigh} data-size={data.Size} data-waist={data.Waist} data-seat={data.seat} >{data.Clothes}</div>
           )}
         </div>
         <div></div>
