@@ -133,7 +133,7 @@ z-index: 5;
 .home {
   display: flex;
   width: fit-content;
-  height: 75vh;
+  height: 85vh;
   width: 100%;
   font-size: 100px;
   justify-content: flex-start;
@@ -143,7 +143,7 @@ z-index: 5;
   background-image: url("https://static01.nyt.com/images/2012/07/25/business/ADCO-1/ADCO-1-superJumbo.jpg");
   background-size: cover;
   background-position: top;
-  opacity: 0.65;
+  opacity: 0.8;
 }
 .container {
   display: inline-block;
