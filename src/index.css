@@ -4,6 +4,26 @@
   width: 20%;
   height: 50vh;
 }
+html{
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.mainImage{
+  display: flex;
+  background-color: black;
+  height: 80vh;
+  top: 10vh;
+  z-index: -5;
+  position:absolute;
+  width: 100vw;
+}
+.main-container{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
 .article {
   border: 1px solid black;
@@ -23,6 +43,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow: none;
 }
 
 .measurement-form {
@@ -118,7 +139,8 @@ z-index: 5;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  background-image: url("https://images.hellogiggles.com/uploads/2016/03/29085607/gallery-1459248316-general-pants-denim.jpg");
+  /* background-color: black; */
+  background-image: url("https://static01.nyt.com/images/2012/07/25/business/ADCO-1/ADCO-1-superJumbo.jpg");
   background-size: cover;
   background-position: top;
   opacity: 0.65;
